@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RBTDATA GIFT</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="top-header">
+    <div class="container header-inner">
+
+      <a href="#home" class="brand">
+        <span class="brand-rbt">RBT</span><span>DATA</span>
+        <small>GIFT</small>
+      </a>
+
+      <nav class="desktop-nav">
+        <a href="#home">Home</a>
+        <a href="#data">Data</a>
+        <a href="#referral">Referral</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <button id="themeToggle" class="icon-btn" type="button">☾</button>
+        <button id="mobileMenuBtn" class="icon-btn mobile-only" type="button">☰</button>
+      </div>
+
+    </div>
+
+    <div id="mobileMenu" class="mobile-menu">
+      <a href="#home">Home</a>
+      <a href="#data">Data</a>
+      <a href="#referral">Referral</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </header>
+
+
+  <!-- HERO -->
+  <main id="home">
+
+    <section class="hero">
+      <div class="container hero-content">
+
+        <div class="hero-badge">
+          ⚡ PREMIUM DATA SERVICE
+        </div>
+
+        <h1>
+          Get More Data.<br>
+          <span>Get More Value.</span>
+        </h1>
+
+        <p>
+          Buy affordable data bundles and enjoy a simple,
+          fast and reliable experience with RBTDATA GIFT.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#data" class="btn btn-primary">Buy Data</a>
+          <a href="#referral" class="btn btn-secondary">Referral Bonus</a>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- WALLET -->
+    <section class="wallet-section">
+      <div class="container">
+
+        <div class="wallet-card">
+
+          <div class="wallet-top">
+            <div>
+              <span class="wallet-label">Wallet Balance</span>
+              <h2 id="walletBalance">₦0.00</h2>
+            </div>
+
+            <div class="wallet-icon">
+              ₦
+            </div>
+          </div>
+
+          <div class="wallet-bottom">
+
+            <div>
+              <span>Referral Earnings</span>
+              <strong id="referralWallet">₦0.00</strong>
+            </div>
+
+            <div class="withdraw-status">
+              Withdraw Unavailable
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- PAYMENT ACCOUNT -->
+    <section class="payment-section">
+      <div class="container">
+
+        <div class="section-heading">
+          <span>PAYMENT</span>
+          <h2>Payment Account</h2>
+          <p>Make payment to the account below before your order is processed.</p>
+        </div>
+
+        <div class="payment-card">
+
+          <div class="payment-bank">
+            <div class="bank-logo">P</div>
+            <div>
+              <strong>PalmPay</strong>
+              <span>Payment Account</span>
+            </div>
+          </div>
+
+          <div class="payment-details">
+
+            <div class="account-detail">
+              <span>Account Number</span>
+              <div class="copy-row">
+                <strong>8991168761</strong>
+                <button id="copyAccount" type="button">Copy</button>
+              </div>
+            </div>
+
+            <div class="account-detail">
+              <span>Account Name</span>
+              <strong>RBTDATAGIFT (MUHAMMAD)</strong>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- DATA -->
+    <section id="data" class="data-section">
+      <div class="container">
+
+        <div class="section-heading">
+          <span>DATA PACKAGES</span>
+          <h2>Choose Your Network</h2>
+          <p>Select a network to view available data packages.</p>
+        </div>
+
+
+        <!-- NETWORK BUTTONS -->
+        <div class="network-selector">
+
+          <button class="network-btn mtn active" data-network="MTN">
+            <span class="network-logo">MTN</span>
+            <small>₦250/GB</small>
+          </button>
+
+          <button class="network-btn airtel" data-network="Airtel">
+            <span class="network-logo">A</span>
+            <small>₦200/GB</small>
+          </button>
+
+          <button class="network-btn glo" data-network="Glo">
+            <span class="network-logo">glo</span>
+            <small>₦300/GB</small>
+          </button>
+
+          <button class="network-btn mobile9" data-network="9mobile">
+            <span class="network-logo">9</span>
+            <small>₦300/GB</small>
+          </button>
+
+        </div>
+
+
+        <!-- PACKAGE GRID -->
+        <div id="packageGrid" class="package-grid"></div>
+
+      </div>
+    </section>
+
+
+    <!-- ORDER MODAL -->
+    <div id="orderModal" class="modal">
+
+      <div class="modal-overlay" id="modalOverlay"></div>
+
+      <div class="order-modal">
+
+        <button id="closeModal" class="close-modal" type="button">
+          ×
+        </button>
+
+        <div class="order-header">
+          <div class="order-icon">📦</div>
+
+          <div>
+            <span>NEW ORDER</span>
+            <h2>Complete Your Order</h2>
+          </div>
+        </div>
+
+
+        <!-- SELECTED PACKAGE -->
+        <div class="selected-package">
+
+          <div>
+            <span>Network</span>
+            <strong id="selectedNetwork">MTN</strong>
+          </div>
+
+          <div>
+            <span>Package</span>
+            <strong id="selectedPackage">10GB</strong>
+          </div>
+
+          <div>
+            <span>Price</span>
+            <strong id="selectedPrice">₦2,500</strong>
+          </div>
+
+        </div>
+
+
+        <!-- ORDER FORM -->
+        <form id="orderForm">
+
+          <div class="form-group">
+            <label for="phoneNumber">Phone Number</label>
+
+            <input
+              type="tel"
+              id="phoneNumber"
+              name="phoneNumber"
+              placeholder="08012345678"
+              maxlength="11"
+              required
+            >
+
+            <small>
+              Enter the phone number you want to receive the data.
+            </small>
+          </div>
+
+
+          <div class="form-group">
+            <label for="customerName">Name</label>
+
+            <input
+              type="text"
+              id="customerName"
+              name="customerName"
+              placeholder="Enter your name"
+              required
+            >
+          </div>
+
+
+          <div class="form-error" id="formError"></div>
+
+
+          <button class="submit-order-btn" type="submit">
+            Submit Order
+          </button>
+
+        </form>
+
+
+        <!-- PENDING RESULT -->
+        <div id="pendingResult" class="pending-result">
+
+          <div class="pending-icon">
+            ⏳
+          </div>
+
+          <h3>Order Submitted</h3>
+
+          <p>
+            Your order has been received successfully.
+          </p>
+
+          <div class="pending-badge">
+            <span></span>
+            PENDING
+          </div>
+
+          <div class="order-summary">
+
+            <div>
+              <span>Order ID</span>
+              <strong id="orderId">RBT000000</strong>
+            </div>
+
+            <div>
+              <span>Phone Number</span>
+              <strong id="pendingPhone">08000000000</strong>
+            </div>
+
+            <div>
+              <span>Package</span>
+              <strong id="pendingPackage">MTN 10GB</strong>
+            </div>
+
+          </div>
+
+          <p class="pending-note">
+            Please complete payment to the PalmPay account
+            shown above. Your order will remain pending until
+            payment is verified.
+          </p>
+
+          <button id="newOrderBtn" class="new-order-btn" type="button">
+            Make Another Order
+          </button>
+
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- REFERRAL -->
+    <section id="referral" class="referral-section">
+      <div class="container">
+
+        <div class="section-heading">
+          <span>REFERRAL PROGRAM</span>
+          <h2>Earn ₦1,340 Per Referral</h2>
+          <p>Invite people and earn referral rewards.</p>
+        </div>
+
+
+        <div class="referral-card">
+
+          <div class="referral-link-box">
+
+            <label>Your Referral Link</label>
+
+            <div class="referral-input-row">
+              <input id="referralLink" type="text" readonly>
+              <button id="copyReferral" type="button">Copy</button>
+              <button id="shareReferral" type="button">Share</button>
+            </div>
+
+          </div>
+
+
+          <div class="referral-rules">
+
+            <div>
+              <strong>₦1,340</strong>
+              <span>Per referral</span>
+            </div>
+
+            <div>
+              <strong>10</strong>
+              <span>Referrals required</span>
+            </div>
+
+            <div>
+              <strong>5GB</strong>
+              <span>Minimum purchase</span>
+            </div>
+
+          </div>
+
+
+          <div class="progress-area">
+
+            <div class="progress-heading">
+              <span>Referral Progress</span>
+              <strong id="referralProgressText">0 / 10</strong>
+            </div>
+
+            <div class="progress-bar">
+              <div id="referralProgress"></div>
+            </div>
+
+          </div>
+
+
+          <div class="referral-stats">
+
+            <div>
+              <span>Successful Referrals</span>
+              <strong id="successfulReferrals">0</strong>
+            </div>
+
+            <div>
+              <span>Total Earnings</span>
+              <strong id="referralEarnings">₦0.00</strong>
+            </div>
+
+            <div>
+              <span>Status</span>
+              <strong id="referralEligibility">Not Eligible</strong>
+            </div>
+
+          </div>
+
+
+          <div class="referral-note">
+            Referral earnings cannot be withdrawn.
+            They can only be used to buy data.
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- FAQ -->
+    <section id="faq" class="faq-section">
+      <div class="container">
+
+        <div class="section-heading">
+          <span>FAQ</span>
+          <h2>Frequently Asked Questions</h2>
+        </div>
+
+        <div class="faq-list">
+
+          <details>
+            <summary>What is the minimum data package?</summary>
+            <p>The minimum package available is 5GB.</p>
+          </details>
+
+          <details>
+            <summary>How much is the referral bonus?</summary>
+            <p>You earn ₦1,340 for each successful referral.</p>
+          </details>
+
+          <details>
+            <summary>Can I withdraw referral earnings?</summary>
+            <p>No. Referral earnings can only be used to purchase data.</p>
+          </details>
+
+          <details>
+            <summary>What do I need before using referral earnings?</summary>
+            <p>You need to purchase at least 5GB and successfully refer 10 people.</p>
+          </details>
+
+          <details>
+            <summary>Which networks are supported?</summary>
+            <p>MTN, Airtel, Glo and 9mobile.</p>
+          </details>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact-section">
+      <div class="container">
+
+        <div class="section-heading">
+          <span>CONTACT</span>
+          <h2>Connect With Us</h2>
+          <p>Follow or contact RBTDATA GIFT.</p>
+        </div>
+
+        <div class="social-links">
+
+          <a href="#" class="social whatsapp" aria-label="WhatsApp">WA</a>
+          <a href="#" class="social tiktok" aria-label="TikTok">TT</a>
+          <a href="#" class="social instagram" aria-label="Instagram">IG</a>
+          <a href="#" class="social facebook" aria-label="Facebook">FB</a>
+          <a href="#" class="social telegram" aria-label="Telegram">TG</a>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-inner">
+      <div>
+        <strong>RBTDATA GIFT</strong>
+        <p>Affordable data. Simple service.</p>
+      </div>
+
+      <p>© 2026 RBTDATA GIFT. All rights reserved.</p>
+    </div>
+  </footer>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>
